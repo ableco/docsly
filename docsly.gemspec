@@ -5,6 +5,8 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Mike Potter"]
   gem.email         = ["mike@disrupto.com"]
   gem.description   = 'A method of documenting APIs.'
+  gem.summary       = 'A method of documenting APIs.'
+  gem.homepage      = 'http://github.com/disrupto/docsly'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
