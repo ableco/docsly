@@ -1,3 +1,5 @@
+require 'docsly/version'
+
 module Docsly 
   class Parser
     attr_accessor :blocks
