@@ -23,7 +23,7 @@ module Docsly
               unless current_block.nil?
                 parsed = line.to_s.sub(/\s*#/, '').rstrip
                 current_block += "\n#{parsed}"
-                current_block = "#{IO.readlines(filename)[0].gsub(' =', '')}\n#{current_block}"
+                # current_block = "#{IO.readlines(filename)[0].gsub(' =', '')}\n#{current_block}"
                 @blocks << current_block
               end
               current_block = nil
@@ -55,7 +55,7 @@ module Docsly
     
     def initialize(array)
       @arguments, @example_responses, @error_codes = [], [], []
-      @name = "#{array.delete_at(0)}.#{array[-1][/[^:]+/].strip}"
+      @name = "#{array[-1][/[^=]+/].strip}"
       @description = array.delete_at(0)
 
       response_index = array.index{|s| s[/Example Response/] }
